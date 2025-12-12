@@ -23,6 +23,7 @@ body {
   background: var(--bg);
   color: var(--text-main);
   line-height: 1.5;
+  overflow-x: hidden;
 }
 
 /* Header */
@@ -75,16 +76,28 @@ body {
   flex-wrap: wrap;
   gap: 10px;
   max-width: 500px;
+  width: 100%;
 }
 
-.waitlist-form input {
+.waitlist-form input[type="email"] {
   flex: 1 1 240px;
   min-width: 0;
+  max-width: 100%;
   padding: 12px 16px;
   border-radius: 8px;
   border: 1px solid var(--border-soft);
   font-size: 14px;
   background: var(--card-bg);
+}
+
+.waitlist-form input[type="checkbox"] {
+  flex: none;
+  width: auto;
+}
+
+.waitlist-form label {
+  flex-basis: 100%;
+  width: 100%;
 }
 
 .waitlist-form input:focus {
@@ -175,6 +188,7 @@ body {
   border-radius: 20px;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.04);
   max-width: 320px;
+  width: 100%;
 }
 
 .step-illustration img {
@@ -295,9 +309,120 @@ body {
   
   .waitlist-form {
     flex-direction: column;
+    width: 100%;
   }
   
-  .waitlist-form input {
+  .waitlist-form input[type="email"] {
     width: 100%;
+    flex: none;
+  }
+  
+  .waitlist-form button {
+    width: 100%;
+  }
+}
+
+/* Mobile specific improvements */
+@media (max-width: 640px) {
+  .site-header {
+    padding: 12px 16px;
+  }
+
+  .hero,
+  .story,
+  .how-it-works,
+  .benefits,
+  .final-cta {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .hero-text h1 {
+    font-size: 32px;
+  }
+
+  .hero-subtitle {
+    font-size: 15px;
+  }
+
+  .hero-illustration img,
+  .story-illustration img {
+    max-width: 100%;
+    border-radius: 16px;
+  }
+
+  .story-text h2 {
+    font-size: 24px;
+  }
+
+  .how-it-works h2,
+  .benefits h2 {
+    font-size: 24px;
+  }
+
+  .step-card,
+  .benefit-card {
+    padding: 16px;
+  }
+
+  .waitlist-form {
+    max-width: 100%;
+  }
+
+  .waitlist-form label {
+    font-size: 11px !important;
+    line-height: 1.4;
+    width: 100%;
+  }
+
+  .waitlist-form input[type="email"] {
+    width: 100%;
+  }
+
+  .waitlist-form button {
+    width: 100%;
+  }
+
+  .final-cta {
+    padding: 32px 16px 40px;
+  }
+
+  .final-cta h2 {
+    font-size: 22px;
+  }
+
+  .site-footer {
+    padding: 16px;
+  }
+
+  .site-footer a {
+    display: inline-block;
+    margin-right: 8px !important;
+  }
+}
+
+/* Extra small phones */
+@media (max-width: 375px) {
+  .hero-text h1 {
+    font-size: 28px;
+  }
+
+  .logo-text {
+    font-size: 16px;
+  }
+
+  .logo-icon {
+    width: 28px;
+    height: 28px;
+  }
+
+  .step-illustration img {
+    width: 64px;
+    height: 64px;
+  }
+
+  .step-card h3,
+  .benefit-card h3 {
+    font-size: 16px;
   }
 }
