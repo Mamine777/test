@@ -74,20 +74,27 @@ body {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
+  max-width: 500px;
 }
 
 .waitlist-form input {
-  flex: 1 1 220px;
+  flex: 1 1 240px;
   min-width: 0;
-  padding: 12px 14px;
-  border-radius: 24px;
+  padding: 12px 16px;
+  border-radius: 8px;
   border: 1px solid var(--border-soft);
   font-size: 14px;
+  background: var(--card-bg);
+}
+
+.waitlist-form input:focus {
+  outline: none;
+  border-color: var(--orange);
 }
 
 .waitlist-form button {
-  padding: 12px 20px;
-  border-radius: 999px;
+  padding: 12px 24px;
+  border-radius: 8px;
   border: none;
   background: var(--orange);
   color: white;
@@ -244,6 +251,7 @@ body {
 
 .final-cta .waitlist-form {
   justify-content: center;
+  margin: 0 auto;
 }
 
 /* Footer */
@@ -284,29 +292,12 @@ body {
   .benefit-grid {
     grid-template-columns: 1fr;
   }
-}
-
-
-.waitlist-form {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 12px;
-  max-width: 360px;
-}
-
-.waitlist-form input[type="email"] {
-  width: 100%;
-}
-
-.waitlist-form .consent {
-  display: flex;
-  align-items: flex-start;
-  gap: 8px;
-  font-size: 13px;
-  color: var(--text-muted);
-}
-
-.waitlist-form button {
-  align-self: flex-start;
+  
+  .waitlist-form {
+    flex-direction: column;
+  }
+  
+  .waitlist-form input {
+    width: 100%;
+  }
 }
